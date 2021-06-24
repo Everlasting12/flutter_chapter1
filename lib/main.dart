@@ -35,7 +35,26 @@ class MyHomePage extends StatelessWidget {
           IconButton(onPressed: () {}, icon: Icon(Icons.more_vert)),
         ],
       ),
-      drawer: Drawer(),
+      drawer: Drawer(
+        child: ListView(children: [
+          DrawerHeader(
+            decoration: BoxDecoration(
+                gradient: LinearGradient(
+              begin: Alignment.topRight,
+              end: Alignment.bottomLeft,
+              colors: [Colors.blue.shade800, Colors.cyan.shade300],
+            )),
+            child: UserAccountsDrawerHeader(
+              decoration: BoxDecoration(
+                color: Colors.transparent,
+              ),
+              currentAccountPicture: Image.network(""),
+              accountName: Text("Sidhesh Parab"),
+              accountEmail: Text("sidheshparab34@gmail.com"),
+            ),
+          ),
+        ]),
+      ),
     );
   }
 }
